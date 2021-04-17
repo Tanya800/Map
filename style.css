@@ -1,0 +1,55 @@
+h2{
+    margin-top: 1%;
+    text-align: center;
+}
+
+h4{
+    margin-top: 1%;
+    text-align: center;
+}
+
+.emblem{
+    margin-left: 45%;
+}
+
+.logo_admin{
+    margin: 1%;
+    text-align: right;
+}
+
+.btn-outline-secondary{
+    margin: 1% ;
+}
+.input-group{
+    margin: 1%;
+
+}
+
+.form-control{
+    width: 50%;
+}
+
+footer {
+    background-color: #343a40;
+    color: #fff;
+}
+
+footer a {
+    background-color: #343a40;
+    color: #fff;
+    text-decoration: none;
+}
+
+footer li{
+    padding-left: 5%;
+    font-size: 13px;
+    list-style-type: none;
+}
+footer p{
+    font-size: 13px;
+}
+
+footer ul {
+    margin-left: 0;
+    padding-left: 0;
+}
