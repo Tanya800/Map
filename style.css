@@ -29,6 +29,12 @@ h4{
     width: 50%;
 }
 
+.map{
+    display: block;
+    text-align: center;
+}
+
+
 footer {
     background-color: #343a40;
     color: #fff;
@@ -53,3 +59,16 @@ footer ul {
     margin-left: 0;
     padding-left: 0;
 }
+
+svg{
+    text-align: center;
+}
+
+li:hover {
+
+    background: #c0effa;
+    text-shadow: 0 0 10px #c0effa;
+}
+
+
+

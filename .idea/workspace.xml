@@ -9,6 +9,7 @@
       <change afterPath="$PROJECT_DIR$/../mysite/.idea/vcs.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../mysite/resources/js/data.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../mysite/resources/js/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/district.json" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/img/emblem.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/index.phtml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
@@ -129,6 +130,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Asus\Documents\server\OpenServer\domains\svg_map" />
       <recent name="C:\Users\Asus\Documents\server\OpenServer\domains\svg_map\img" />
     </key>
   </component>
