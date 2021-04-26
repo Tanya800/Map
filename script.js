@@ -8,7 +8,7 @@ $mapLinks.forEach(el => {
 		let self = e.currentTarget;
 		let color = self.dataset.color;
 		let selfClass = self.getAttribute('href');
-		let currentElement = document.querySelector(`.list-group a[href="${selfClass}"]`);
+		let currentElement = document.querySelector(`.region a[href="${selfClass}"]`);
 		let currentPath = self.querySelectorAll('path');
 		if (currentPath) currentPath.forEach(el => el.style.cssText = `fill: ${chosenColor}; stroke:#000000;stroke-width: 3px;`);
 		currentElement.classList.add('active');
@@ -17,7 +17,7 @@ $mapLinks.forEach(el => {
 	el.addEventListener('mouseleave', (e) => {
 		let self = e.currentTarget;
 		let selfClass = self.getAttribute('href');
-		let currentElement = document.querySelector(`.list-group a[href="${selfClass}"]`);
+		let currentElement = document.querySelector(`.region a[href="${selfClass}"]`);
 		let currentPath = self.querySelectorAll('path');
 		if (currentPath) currentPath.forEach(el => el.style.cssText = standStyle);
 		currentElement.classList.remove('active');
