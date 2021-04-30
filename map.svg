@@ -9,7 +9,7 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    sodipodi:docname="map.svg"
-   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   inkscape:version="1.0.2-2 (e86c870879, 2021-01-15)"
    id="svg8"
    version="1.1"
    viewBox="0 0 332.0285 293.2868"
@@ -17,6 +17,12 @@
    width="332.0285mm">
   <defs
      id="defs2">
+    <rect
+       x="103.95021"
+       y="19.707954"
+       width="53.086834"
+       height="2.8156172"
+       id="rect150" />
     <rect
        id="rect2973"
        height="6.9041777"
@@ -491,19 +497,319 @@
            style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
       </g>
     </clipPath>
+    <rect
+       x="103.95021"
+       y="19.707954"
+       width="57.374828"
+       height="5.3593311"
+       id="rect150-6" />
+    <rect
+       x="103.95021"
+       y="19.707954"
+       width="48.480606"
+       height="15.707422"
+       id="rect173" />
+    <rect
+       x="103.95021"
+       y="19.707954"
+       width="67.404673"
+       height="6.4930575"
+       id="rect150-6-4" />
+    <rect
+       x="103.95021"
+       y="19.707954"
+       width="57.374828"
+       height="5.3593311"
+       id="rect209" />
+    <rect
+       x="103.95021"
+       y="19.707954"
+       width="84.333988"
+       height="6.7431823"
+       id="rect150-6-4-2" />
+    <rect
+       x="103.95021"
+       y="19.707954"
+       width="67.404671"
+       height="6.4930577"
+       id="rect245" />
+    <rect
+       x="103.95021"
+       y="19.707954"
+       width="84.333984"
+       height="6.7431822"
+       id="rect150-6-4-2-9" />
+    <rect
+       x="103.95021"
+       y="19.707954"
+       width="84.333984"
+       height="6.7431822"
+       id="rect282" />
+    <rect
+       x="103.95021"
+       y="19.707954"
+       width="84.333984"
+       height="6.7431822"
+       id="rect150-6-4-2-9-0" />
+    <rect
+       x="103.95021"
+       y="19.707954"
+       width="84.333984"
+       height="6.7431822"
+       id="rect319" />
+    <rect
+       x="103.95021"
+       y="19.707954"
+       width="84.333984"
+       height="6.7431822"
+       id="rect150-6-4-2-9-0-4" />
+    <rect
+       x="103.95021"
+       y="19.707954"
+       width="84.333984"
+       height="6.7431822"
+       id="rect356" />
+    <rect
+       x="103.95021"
+       y="19.707954"
+       width="84.333984"
+       height="6.7431822"
+       id="rect150-6-4-2-9-0-4-7" />
+    <rect
+       x="103.95021"
+       y="19.707954"
+       width="84.333984"
+       height="6.7431822"
+       id="rect392" />
+    <rect
+       x="103.95021"
+       y="19.707954"
+       width="53.086834"
+       height="2.8156171"
+       id="rect150-5" />
+    <rect
+       x="103.95021"
+       y="19.707954"
+       width="53.086834"
+       height="2.8156171"
+       id="rect429" />
+    <rect
+       x="103.95021"
+       y="19.707954"
+       width="63.596019"
+       height="2.9782876"
+       id="rect150-3" />
+    <rect
+       x="103.95021"
+       y="19.707954"
+       width="53.086834"
+       height="2.8156171"
+       id="rect465" />
+    <rect
+       x="103.95021"
+       y="19.707954"
+       width="91.802893"
+       height="3.4032493"
+       id="rect150-9" />
+    <rect
+       x="103.95021"
+       y="19.707954"
+       width="53.086834"
+       height="2.8156171"
+       id="rect501" />
+    <rect
+       x="103.95021"
+       y="19.707954"
+       width="91.802895"
+       height="3.4032493"
+       id="rect150-9-8" />
+    <rect
+       x="103.95021"
+       y="19.707954"
+       width="91.802895"
+       height="3.4032493"
+       id="rect537" />
+    <rect
+       x="103.95021"
+       y="19.707954"
+       width="91.802895"
+       height="3.4032493"
+       id="rect150-9-8-6" />
+    <rect
+       x="103.95021"
+       y="19.707954"
+       width="91.802895"
+       height="3.4032493"
+       id="rect574" />
+    <rect
+       x="103.95021"
+       y="19.707954"
+       width="91.802895"
+       height="3.4032493"
+       id="rect150-9-8-6-8" />
+    <rect
+       x="103.95021"
+       y="19.707954"
+       width="91.802895"
+       height="3.4032493"
+       id="rect611" />
+    <rect
+       x="103.95021"
+       y="19.707954"
+       width="91.802895"
+       height="3.4032493"
+       id="rect150-9-8-6-8-7" />
+    <rect
+       x="103.95021"
+       y="19.707954"
+       width="91.802895"
+       height="3.4032493"
+       id="rect648" />
+    <rect
+       x="103.95021"
+       y="19.707954"
+       width="105.54047"
+       height="4.0018045"
+       id="rect150-9-8-6-8-7-3" />
+    <rect
+       x="103.95021"
+       y="19.707954"
+       width="91.802895"
+       height="3.4032493"
+       id="rect685" />
+    <rect
+       x="103.95021"
+       y="19.707954"
+       width="105.54047"
+       height="4.0018044"
+       id="rect150-9-8-6-8-7-3-4" />
+    <rect
+       x="103.95021"
+       y="19.707954"
+       width="105.54047"
+       height="4.0018044"
+       id="rect722" />
+    <rect
+       x="103.95021"
+       y="19.707954"
+       width="105.54047"
+       height="4.0018044"
+       id="rect150-9-8-6-8-7-3-4-6" />
+    <rect
+       x="103.95021"
+       y="19.707954"
+       width="105.54047"
+       height="4.0018044"
+       id="rect759" />
+    <rect
+       x="103.95021"
+       y="19.707954"
+       width="105.54047"
+       height="4.0018044"
+       id="rect150-9-8-6-8-7-3-4-7" />
+    <rect
+       x="103.95021"
+       y="19.707954"
+       width="105.54047"
+       height="4.0018044"
+       id="rect796" />
+    <rect
+       x="103.95021"
+       y="19.707954"
+       width="105.54047"
+       height="4.0018044"
+       id="rect150-9-8-6-8-7-3-4-7-8" />
+    <rect
+       x="103.95021"
+       y="19.707954"
+       width="105.54047"
+       height="4.0018044"
+       id="rect833" />
+    <rect
+       x="103.95021"
+       y="19.707954"
+       width="105.54047"
+       height="4.0018044"
+       id="rect150-9-8-6-8-7-3-4-7-8-7" />
+    <rect
+       x="103.95021"
+       y="19.707954"
+       width="105.54047"
+       height="4.0018044"
+       id="rect870" />
+    <rect
+       x="103.95021"
+       y="19.707954"
+       width="105.54047"
+       height="4.0018044"
+       id="rect150-9-8-6-8-7-3-4-7-8-7-2" />
+    <rect
+       x="103.95021"
+       y="19.707954"
+       width="105.54047"
+       height="4.0018044"
+       id="rect907" />
+    <rect
+       x="103.95021"
+       y="19.707954"
+       width="105.54047"
+       height="4.0018044"
+       id="rect150-9-8-6-8-7-3-4-7-8-7-2-2" />
+    <rect
+       x="103.95021"
+       y="19.707954"
+       width="105.54047"
+       height="4.0018044"
+       id="rect944" />
+    <rect
+       x="103.95021"
+       y="19.707954"
+       width="105.54047"
+       height="4.0018044"
+       id="rect150-9-8-6-8-7-3-4-7-8-7-2-2-0" />
+    <rect
+       x="103.95021"
+       y="19.707954"
+       width="105.54047"
+       height="4.0018044"
+       id="rect981" />
+    <rect
+       x="103.95021"
+       y="19.707954"
+       width="105.54047"
+       height="4.0018044"
+       id="rect150-9-8-6-8-7-3-4-7-8-7-2-2-0-4" />
+    <rect
+       x="103.95021"
+       y="19.707954"
+       width="105.54047"
+       height="4.0018044"
+       id="rect1018" />
+    <rect
+       x="103.95021"
+       y="19.707954"
+       width="105.54047"
+       height="4.0018044"
+       id="rect150-9-8-6-8-7-3-4-7-8-7-2-2-0-4-1" />
+    <rect
+       x="103.95021"
+       y="19.707954"
+       width="105.54047"
+       height="4.0018044"
+       id="rect1055" />
   </defs>
   <sodipodi:namedview
      inkscape:window-maximized="0"
-     inkscape:window-y="0"
-     inkscape:window-x="0"
+     inkscape:window-y="16"
+     inkscape:window-x="92"
      inkscape:window-height="967"
-     inkscape:window-width="1280"
+     inkscape:window-width="1677"
      showgrid="false"
      inkscape:document-rotation="0"
      inkscape:current-layer="layer3"
      inkscape:document-units="mm"
-     inkscape:cy="491.60171"
-     inkscape:cx="613.48814"
+     inkscape:cy="510.18947"
+     inkscape:cx="697.09866"
      inkscape:zoom="0.7"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0.0"
@@ -519,7 +825,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -654,5 +960,254 @@
        id="path458"
        d="m 411.45131,238.97336 c -4.55171,0.93959 0.44633,7.14872 0.93471,9.81027 2.49063,8.10031 14.61858,9.39995 15.40458,17.98549 -5.11593,10.46827 -15.67329,18.85565 -26.875,22.09543 -6.89007,1.06676 -8.65094,10.40888 -12.61696,15.05819 -5.77032,11.6759 -14.43912,21.94537 -19.42266,33.9206 0.0949,7.79608 11.46534,6.96969 16.57366,9.19085 10.13855,3.3063 24.40192,5.55429 28.52958,16.94754 1.5267,10.62241 -3.00657,21.96288 0.55524,32.16797 4.35929,2.54171 4.9923,8.10184 1.26116,11.48717 -4.5724,7.0564 -14.01267,11.85117 -15.32924,20.55803 4.35855,6.76701 15.54246,5.0891 19.75168,12.68694 6.28312,9.00616 -4.35549,18.10159 -11.84456,21.90829 -3.20462,4.68297 0.41492,12.52882 0.31755,18.36541 0.20919,8.01143 4.70559,16.86291 2.55379,24.50867 -8.09043,3.44164 -18.87241,-0.92631 -25.58315,5.41294 -6.20719,10.59186 -10.13257,23.56509 -8.75279,35.78683 6.74074,-0.95948 12.78827,-8.28087 19.90793,-7.96037 8.56997,1.84863 16.83566,11.50602 25.88169,7.14007 8.59034,-5.161 16.7416,-17.09538 28.14733,-12.11775 8.98002,2.70095 14.26864,14.98404 6.67968,22.1038 -3.66795,4.14248 -4.07416,9.77075 0.61105,13.31194 4.66284,4.39584 8.61235,11.4579 14.52753,13.3831 16.16203,-0.58344 32.32398,-1.1691 48.48586,-1.75643 6.19802,6.91874 10.63239,16.63856 18.28963,21.80524 7.08063,-8.75367 4.16843,-24.07808 14.93582,-30.52175 12.71355,-9.07156 24.12691,-20.26428 31.50112,-34.07366 8.13318,-10.87963 21.68336,-15.23479 33.44586,-20.41853 -0.68197,-11.19856 5.80319,-26.944 -5.77846,-34.67634 -7.6239,-6.28057 -17.78904,-10.00919 -24.12108,-17.60045 -1.85626,-11.86975 -3.14622,-27.30578 7.97154,-35.26785 14.05963,-11.39882 32.4847,-16.58885 44.56972,-30.67932 11.27347,-6.16587 -3.54278,-9.80464 -8.67696,-14.02835 -10.47256,-7.73207 -24.30083,-14.15794 -29.54512,-26.79345 -2.89941,-7.23042 2.47455,-17.54204 -5.87331,-22.21261 -7.10053,-6.82306 -3.33737,-19.41187 -10.87054,-25.50782 -8.12289,2.78436 -12.47792,13.35786 -21.19699,15.02511 -16.4023,-7.60786 -15.31591,-28.74609 -25.40267,-41.62609 -3.14511,-6.30794 -13.78139,-12.87955 -8.03204,-20.7037 2.0729,-2.18657 7.65418,-9.42351 0.92913,-9.07088 -4.28638,-1.0384 -12.88935,-6.90502 -13.35379,1.28907 -8.0172,7.7678 -20.29502,14.6778 -31.1663,7.8962 -7.65129,-5.02781 -15.13523,-11.83329 -25.1423,-10.51618 -12.52565,1.38094 -24.59843,-2.08733 -35.37951,-8.34501 -5.46339,-2.09335 -10.86778,-5.61474 -16.80241,-5.96861 z m 100.82311,162.58092 c 7.04765,4.62569 6.80768,15.22233 12.25167,21.49553 5.1617,7.51612 11.84133,13.97169 15.89007,22.26563 -7.21683,9.83039 -21.4798,4.00414 -30.13952,11.82199 -9.87388,5.7314 -18.88345,13.94938 -28.93972,18.75 -8.1604,-5.68318 -17.42286,-12.31646 -21.0798,-21.91128 1.25592,-10.45387 19.70456,-9.45028 17.19866,-21.41741 -2.7697,-7.9689 4.26634,-14.574 11.6769,-15.32924 8.22932,-0.27337 14.36822,-5.66886 18.30357,-12.42187 1.30299,-1.38948 2.74332,-3.27202 4.83817,-3.25335 z"
        style="fill:#c2f8ff;stroke:#000000;stroke-width:2.69966;stroke-linecap:round;stroke-linejoin:round;paint-order:markers stroke fill" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer1"
+     inkscape:label="titles"
+     style="display:inline">
+    <text
+       xml:space="preserve"
+       id="text1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.40098px;line-height:0px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect150);"
+       x="22.991529"
+       y="0"
+       transform="matrix(0.81003375,0,0,1.9754208,24.193256,-8.4560832)"><tspan
+         x="104.81741"
+         y="22.120887"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.40098px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle">Болховский</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       id="text2"
+       style="font-size:8.46667px;line-height:0px;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect150-6);"
+       x="22.991529"
+       y="0"
+       transform="matrix(0.73392975,0,0,1.7433214,149.14489,117.00529)"><tspan
+         x="106.7974"
+         y="22.139762"><tspan>Верховский</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       id="text3"
+       style="font-size:8.46667px;line-height:0px;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect150-6-4);"
+       x="22.991529"
+       y="0"
+       transform="matrix(0.62514826,0,0,1.5111514,60.033831,171.77033)"><tspan
+         x="107.38952"
+         y="22.139762"><tspan>Глазуновский</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       id="text4"
+       style="font-size:8.46667px;line-height:0px;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect150-6-4-2);"
+       x="22.991529"
+       y="0"
+       transform="matrix(0.81797934,0,0,1.6040194,-75.058951,158.02781)"><tspan
+         x="117.29304"
+         y="22.139762"><tspan>Дмитровский</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       id="text5"
+       style="font-size:8.46667px;line-height:0px;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect150-6-4-2-9);"
+       x="22.991529"
+       y="0"
+       transform="matrix(0.81797934,0,0,1.6040194,157.07485,233.24506)"><tspan
+         x="118.96115"
+         y="22.139762"><tspan>Должанский</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       id="text6"
+       style="font-size:8.46667px;line-height:0px;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect150-6-4-2-9-0);"
+       x="22.991529"
+       y="0"
+       transform="matrix(0.69942428,0,0,1.8044107,88.760805,90.11783)"><tspan
+         x="112.09232"
+         y="22.139762"><tspan>Залегощенский</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       id="text7"
+       style="font-size:8.46667px;line-height:0px;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect150-6-4-2-9-0-4);"
+       x="22.991529"
+       y="0"
+       transform="matrix(0.69942428,0,0,1.8044107,-16.625616,13.239469)"><tspan
+         x="119.9182"
+         y="22.139762"><tspan>Знаменский</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       id="text8"
+       style="font-size:8.46667px;line-height:0px;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect150-6-4-2-9-0-4-7);"
+       x="22.991529"
+       y="0"
+       transform="matrix(0.86060283,0,0,2.0922839,101.17969,197.07917)"><tspan
+         x="117.17108"
+         y="22.139762"><tspan>Колпнянский</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       id="text9"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.40098px;line-height:0px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect150-3);"
+       x="22.991529"
+       y="0"
+       transform="matrix(0.69765955,0,0,2.1831786,170.23519,35.189076)"><tspan
+         x="105.26471"
+         y="22.120887"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.40098px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle">Корсаковский</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       id="text10"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.40098px;line-height:0px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect150-9);"
+       x="22.991529"
+       y="0"
+       transform="matrix(0.55721191,0,0,1.5074501,208.08941,131.24362)"><tspan
+         x="111.67689"
+         y="22.120887"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.40098px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle">Краснозоренский</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       id="text11"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.40098px;line-height:0px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect150-9-8);"
+       x="22.991529"
+       y="0"
+       transform="matrix(0.87578798,0,0,1.7882325,-33.001168,130.95175)"><tspan
+         x="128.88291"
+         y="22.120887"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.40098px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle">Кромской</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       id="text12"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.40098px;line-height:0px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect150-9-8-6);"
+       x="22.991529"
+       y="0"
+       transform="matrix(1.0227863,0,0,1.8464406,135.52111,182.57459)"><tspan
+         x="126.29452"
+         y="22.120887"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.40098px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle">Ливенский</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       id="text13"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.40098px;line-height:0px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect150-9-8-6-8);"
+       x="22.991529"
+       y="0"
+       transform="matrix(0.50673712,0,0,1.2380786,102.64613,190.72749)"><tspan
+         x="106.21503"
+         y="22.120887"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.40098px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle">Малоархангельский</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       id="text14"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.40098px;line-height:0px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect150-9-8-6-8-7);"
+       x="22.991529"
+       y="0"
+       transform="matrix(0.85293555,0,0,1.8944429,50.941937,28.314908)"><tspan
+         x="128.31887"
+         y="22.120887"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.40098px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle">Мценский</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       id="text15"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.40098px;line-height:0px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect150-9-8-6-8-7-3);"
+       x="22.991529"
+       y="0"
+       transform="matrix(0.56104278,0,0,1.6136604,196.48228,88.471919)"><tspan
+         x="108.01922"
+         y="22.120887"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.40098px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle">Новодеревеньковский</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       id="text16"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.40098px;line-height:0px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect150-9-8-6-8-7-3-4);"
+       x="22.991529"
+       y="0"
+       transform="matrix(0.69329706,0,0,1.787735,125.10294,70.810415)"><tspan
+         x="125.92258"
+         y="22.120887"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.40098px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle">Новосильский</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       id="text17"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.40098px;line-height:0px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect150-9-8-6-8-7-3-4-6);"
+       x="22.991529"
+       y="0"
+       transform="matrix(0.82199092,0,0,1.7029801,2.7105375,59.159427)"><tspan
+         x="133.03552"
+         y="22.120887"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.40098px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle">Орловский</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       id="text18"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.40098px;line-height:0px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect150-9-8-6-8-7-3-4-7);"
+       x="22.991529"
+       y="0"
+       transform="matrix(0.88848441,0,0,1.6941408,76.175185,150.08419)"><tspan
+         x="130.75683"
+         y="22.120887"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.40098px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle">Покровский</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       id="text19"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.40098px;line-height:0px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect150-9-8-6-8-7-3-4-7-8);"
+       x="22.991529"
+       y="0"
+       transform="matrix(0.74034652,0,0,1.5537496,40.202528,137.85591)"><tspan
+         x="125.79747"
+         y="22.120887"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.40098px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle">Свердловский</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       id="text20"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.40098px;line-height:0px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect150-9-8-6-8-7-3-4-7-8-7);"
+       x="22.991529"
+       y="0"
+       transform="matrix(0.54182733,0,0,1.3216502,-28.141341,129.41253)"><tspan
+         x="131.35368"
+         y="22.120887"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.40098px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle">Сосковский</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       id="text21"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.40098px;line-height:0px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect150-9-8-6-8-7-3-4-7-8-7-2);"
+       x="22.991529"
+       y="0"
+       transform="matrix(0.68563027,0,0,1.4620414,-6.58945,185.49217)"><tspan
+         x="128.74273"
+         y="22.120887"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.40098px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle">Троснянский</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       id="text22"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.40098px;line-height:0px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect150-9-8-6-8-7-3-4-7-8-7-2-2);"
+       x="22.991529"
+       y="0"
+       transform="matrix(0.73792507,0,0,1.5556356,-28.623247,80.744219)"><tspan
+         x="138.25947"
+         y="22.120887"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.40098px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle">Урицкий</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       id="text23"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.40098px;line-height:0px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect150-9-8-6-8-7-3-4-7-8-7-2-2-0);"
+       x="22.991529"
+       y="0"
+       transform="matrix(0.64371628,0,0,1.505146,-44.88387,49.032671)"><tspan
+         x="130.12307"
+         y="22.120887"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.40098px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle">Хотынецкий</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       id="text24"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.40098px;line-height:0px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect150-9-8-6-8-7-3-4-7-8-7-2-2-0-4);"
+       x="22.991529"
+       y="0"
+       transform="matrix(0.71340314,0,0,1.9670179,-76.500927,86.652386)"><tspan
+         x="123.38752"
+         y="22.120887"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.40098px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle">Шаблыкинский</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       id="text0"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.40098px;line-height:0px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect150-9-8-6-8-7-3-4-7-8-7-2-2-0-4-1);"
+       x="22.991529"
+       y="0"
+       transform="matrix(0.79402455,0,0,1.2039252,24.24577,85.167958)"><tspan
+         x="144.44329"
+         y="22.120887"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.40098px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">Орел</tspan></tspan></text>
   </g>
 </svg>
