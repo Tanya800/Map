@@ -8,11 +8,22 @@ h4{
     text-align: center;
 }
 
+
 .emblem{
-    margin-left: 45%;
+    margin: auto;
+    width: 10%;
+    height: 20%;
+    padding: 10px;
+}
+
+.emblem img{
+    height: 100%;
+    width: 100%;
+    margin: auto;
 }
 
 .logo_admin{
+ display: block;
     margin: 1%;
     text-align: right;
 }
@@ -29,11 +40,86 @@ h4{
     width: 50%;
 }
 
-.map{
-    display: block;
-    text-align: center;
+.content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    align-self: stretch;
 }
 
+.left-block{
+    height: 900px;
+    overflow:auto;
+    flex: 1 2 150px;
+    border: 3px solid white;
+}
+
+
+/* полоса прокрутки (скроллбар) */
+::-webkit-scrollbar {
+    width: 8px; /* ширина для вертикального скролла */
+    height: 8px; /* высота для горизонтального скролла */
+}
+
+/* ползунок скроллбара */
+::-webkit-scrollbar-thumb {
+    background-color: #ffffff;
+    border-radius: 5em;
+    box-shadow: inset 1px 1px 10px #808080;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #808088;
+}
+
+/* Стрелки */
+
+::-webkit-scrollbar-button:vertical:start:decrement {
+    background: linear-gradient(120deg, #02141a 40%, rgba(0, 0, 0, 0) 41%),
+    linear-gradient(240deg, #02141a 40%, rgba(0, 0, 0, 0) 41%),
+    linear-gradient(0deg, #02141a 30%, rgba(0, 0, 0, 0) 31%);
+    background-color: #f6f8f4;
+}
+
+::-webkit-scrollbar-button:vertical:end:increment {
+    background:
+        linear-gradient(300deg, #02141a 40%, rgba(0, 0, 0, 0) 41%),
+        linear-gradient(60deg, #02141a 40%, rgba(0, 0, 0, 0) 41%),
+        linear-gradient(180deg, #02141a 30%, rgba(0, 0, 0, 0) 31%);
+    background-color: #f6f8f4;
+}
+
+
+.map-block{
+    
+    flex: 2 1 300px;
+    flex-shrink:0;
+    border: 3px solid white;
+}
+
+.region{
+    
+}
+
+.map{
+    padding: 5%;
+    border: 3px solid white;
+    display: block;
+    text-align: center;
+   
+}
+.mysvg {
+    width: 200mm;
+}
+
+.list-group-item{
+    height: 55px;
+}
+.list-group-item:hover{
+    background-color: #c0effa;
+    text-shadow: 0 0 10px #c0effa;
+}
 
 footer {
     background-color: #343a40;
@@ -64,11 +150,45 @@ svg{
     text-align: center;
 }
 
-li:hover {
-
-    background: #c0effa;
-    text-shadow: 0 0 10px #c0effa;
+a{
+	color: #000;
 }
 
+.active {
 
+    background-color: #c0effa;
+    text-shadow: 0 0 10px #c0effa;
+    transition: all 0.15s;
+}
 
+.block {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100px;
+}
+
+.scheme-item {
+    position: absolute;
+    cursor: pointer;
+}
+.scheme-name {
+    font-weight: bold;
+    font-size: 10px;
+    text-align: center;
+    line-height: 13px;
+}
+.scheme-popup {
+    display: none;
+    border: 1px solid #777;
+    padding: 10px;
+    width: 200px;
+    position: absolute;
+    font-size: 12px;
+    line-height: 14px;
+    background: #fff;
+    z-index: 9999;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    text-align: left;
+}
