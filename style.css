@@ -109,16 +109,20 @@ h4{
     text-align: center;
    
 }
-.mysvg {
+.svg {
+    
     width: 200mm;
+
 }
 
 .list-group-item{
     height: 55px;
 }
-.list-group-item:hover{
+.list-group-item-active {
     background-color: #c0effa;
     text-shadow: 0 0 10px #c0effa;
+    text-decoration: none;
+    color: black;
 }
 
 footer {

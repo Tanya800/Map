@@ -1,24 +1,62 @@
-
 <header>
     <div class="header">
-        <div class="logo_admin col" id="logo_admin"><i class="fas fa-user-cog fa-2x"></i>
-            <form id ="auth" style="display: none;width: 30%;"  method="post">
-                <div class="input-group" >
-                    <span class="input-group-text">Логин: </span>
-                    <input id="login" type="text" class="form-control" placeholder="Логин" aria-label="Логин" aria-describedby="addon-wrapping">
-                </div>
-                <div class="input-group" >
-                    <span class="input-group-text">Пароль: </span>
-                    <input id="password" type="password" class="form-control" id="inputPassword">
-                </div>
-                <div class="btn-group" role="group">
-                    <input type="submit" value="Войти" /> </div>
-            </form>
-        </div>
+        <div class="logo_admin col">
+            <?php
+            if($_SERVER['REQUEST_METHOD'] == 'POST') {
+                $auth = 0;
+                $login = $_POST['login'];
+                $password= $_POST['password'];
 
+                if($login =="admin" && $password =="12345") {
+                    $auth = 1;
+                }else{
+                    echo "Не соответсвующие логин или пароль";
+                }
+
+            }
+            ?>
+
+            <i id="logo_exit" class="fas fa-sign-out-alt fa-2x" style="display: none"></i>
+
+            <i id="logo_admin" class="fas fa-user-cog fa-2x" style="display: block"></i>
+            <?php ?>
+            <div id ="auth" style="display: none;width: 30%;" >
+                <form method="post">
+                    <div class="input-group" >
+                        <span class="input-group-text">Логин: </span>
+                        <input name="login" type="text" class="form-control" placeholder="Логин" aria-label="Логин" aria-describedby="addon-wrapping" pattern="[A-Za-z0-9]{5,}" required>
+                    </div>
+                    <div class="input-group" >
+                        <span class="input-group-text">Пароль: </span>
+                        <input name="password" type="password" class="form-control" id="inputPassword" maxlength="16" required>
+                    </div>
+                    <div class="btn-group" role="group">
+                        <input type="submit" value="Войти" /> </div>
+                </form>
+        </div>
+        </div>
         <div class="emblem" >
-            <a href="/index.phtml">
+            <a href="<?=$temp_main_links?>">
                 <img src="img/emblem.jpg" alt="герб Орловской области">
             </a>
         </div>
 </header>
+
+<script>
+    logo_admin.onclick = function () {
+
+            document.getElementById('logo_exit').style.display = 'block';
+
+            document.getElementById('logo_admin').style.display='none';
+
+            document.getElementById('auth').style.display = 'block';
+    }
+
+    logo_exit.onclick = function () {
+
+        document.getElementById('logo_exit').style.display = 'none';
+        document.getElementById('logo_admin').style.display='block';
+         document.getElementById('auth').style.display = 'none';
+    }
+
+</script>
