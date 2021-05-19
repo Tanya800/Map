@@ -1,0 +1,113 @@
+<?php
+
+include("connect.php");
+$link = mysqli_connect($host, $user, $password, $database)
+or die("Ошибка " . mysqli_error($link));
+
+$query ="SELECT * FROM school";
+$result = mysqli_query($link, $query) or die("Ошибка " . mysqli_error($link));
+if($result)
+{
+    while($row = $result->fetch_assoc())// получаем все строки в цикле по одной
+    {
+?>
+        <form action="db/db_insert_school.phtml" method="post">
+        <?php if ($auth->isAuth()){?>
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-outline-secondary" id = "cancel">Отменить</button>
+            <button type='button' class="btn btn-outline-secondary" id="del">Удалить</button>
+            <button type='submit' class="btn btn-outline-secondary" id="save">Сохранить</button>
+        </div>
+    <?php }?>
+     <div class="card" style="width:100%">
+        <?php if ($auth->isAuth()){?>
+            <p class="text_school_info"><strong>Ссылка на фото: </strong></p>
+            <input style="width: 100%" type="text" class="form-control" name="school_photo" id="school_photo" value="<?php echo $row['img']?>" placeholder="Ссылка на фото" aria-label="Ссылка на фото" aria-describedby="addon-wrapping">
+        </br>
+        <?php }?>
+     <img src="<?php echo $row['img'] ?>" class="card-img-top" >
+
+     <div class="card-body">
+
+
+
+            <p class="text_school_info"><strong>Район: </strong></p>
+                    <?php if ($auth->isAuth()){?>
+                        <input style="width: 100%" type="text" class="form-control" name="school_district" id="school_district" placeholder="Район" aria-label="Район" aria-describedby="addon-wrapping" readonly>
+                    <?php }else{?>
+                        <p class="text_school"><?php echo $row['id_district']?></p>
+                    <?php }?>
+
+            <p class="text_school_info"><strong>Учреждение дополнительного образования: </strong></p>
+                    <?php if ($auth->isAuth()){?>
+                        <input style="width: 100%" type="text" name="school_name" id="school_name" class="form-control" placeholder="Учреждение дополнительного образования" value="<?php echo $row['name']?>"  aria-describedby="addon-wrapping" required>
+                    <?php }else{?>
+                        <p class="text_school"><?php echo $row['name']?></p>
+                    <?php }?>
+
+            <p class="text_school_info"><strong>Полное название: </strong></p>
+                    <?php if ($auth->isAuth()){?>
+                        <input style="width: 100%" type="text" name="full_school_name" id="full_school_name" class="form-control" placeholder="Полное название"  value="<?php echo $row['full_name']?>"  aria-describedby="addon-wrapping" required>
+                    <?php }else{?>
+                        <p class="text_school"><?php echo $row['full_name']?></p>
+                    <?php }?>
+
+            <p class="text_school_info"><strong>Полный адрес: </strong></p>
+                    <?php if ($auth->isAuth()){?>
+                        <input style="width: 100%" type="text" name="adress" id="adress" class="form-control" placeholder="Полный адрес" value="<?php echo $row['adres']?>" aria-describedby="addon-wrapping" required>
+                    <?php }else{?>
+                        <p class="text_school"><?php echo $row['adres']?></p>
+                    <?php }?>
+
+                    <p class="text_school_info"><strong>Руководитель/директор: </strong></p>
+                    <?php if ($auth->isAuth()){?>
+                        <input style="width: 100%" type="text" name="director" id="director" class="form-control" placeholder="Руководитель/директор" value="<?php echo $row['director']?>" aria-describedby="addon-wrapping" pattern="[А-я][А-Яа-я' -]+">
+                    <?php }else{?>
+                        <p class="text_school"><?php echo $row['director']?></p>
+                    <?php }?>
+
+                    <p class="text_school_info"><strong>ФИО: </strong></p>
+                    <?php if ($auth->isAuth()){?>
+                        <input style="width: 100%" type="text" name="director_name" id="director_name" class="form-control" placeholder="ФИО" value="<?php echo $row['director_name']?>" aria-describedby="addon-wrapping" pattern="[А-я][А-Яа-я' -]+">
+                    <?php }else{?>
+                        <p class="text_school"><?php echo $row['director_name']?></p>
+                    <?php }?>
+
+                    <p class="text_school_info"><strong>Телефон: </strong></p>
+                    <?php if ($auth->isAuth()){?>
+                        <input style="width: 100%" name="phone" id="phone" class="form-control" placeholder="Телефон" value="<?php echo $row['phone']?>" aria-describedby="addon-wrapping" type="tel">
+                    <?php }else{?>
+                        <p class="text_school"><?php echo $row['phone']?></p>
+                    <?php }?>
+
+                    <p class="text_school_info"><strong>E-mail: </strong></p>
+                    <?php if ($auth->isAuth()){?>
+                        <input style="width: 100%" name="email" id="email" class="form-control" placeholder="E-mail" value="<?php echo $row['email']?>" aria-describedby="addon-wrapping"  type="email">
+                    <?php }else{?>
+                        <p class="text_school"><?php echo $row['email']?></p>
+                    <?php }?>
+
+                    <p class="text_school_info"><strong>Ссылка на сайт: </strong></p>
+                    <?php if ($auth->isAuth()){?>
+                        <input style="width: 100%" name="website" id="website" class="form-control" placeholder="Ссылка на сайт" value="<?php echo  $row['site']?>" aria-describedby="addon-wrapping"  type="url">
+                    <?php }else{?>
+                        <a class="text_school" href="<?php echo $row['site']?>" style="text-decoration: none;color: #6a8dff;"><?php echo $row['site']?></a>
+                    <?php }?>
+
+                    <p class="text_school_info"><strong>Дополнительная информация об учреждении: </strong></p>
+                    <?php if ($auth->isAuth()){?>
+                        <textarea style="width: 100%" class="form-control"  name="info" id="info" value="<?php echo $row['info']?>"></textarea>
+                    <?php }else{?>
+                        <p class="text_school"><?php echo $row['info']?></p>
+                    <?php }?>
+
+
+        </div>
+    </div>
+        </form>
+<?php
+    }
+}
+mysqli_close($link);
+?>
+

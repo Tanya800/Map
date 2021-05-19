@@ -6,6 +6,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     $sep_school = "๑";
 
     $school_district = $_POST['school_district'];
+    $school_info = $_POST['school_info'];
     $full_school_name = $_POST['full_school_name'];
     $adress = $_POST['adress'];
     $director = $_POST['director'];
@@ -15,7 +16,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     $website = $_POST['website'];
     $info = $_POST['info'];
 
-    $school_info = (string)$school_district.(string)$sep_info.(string)$full_school_name.(string)$sep_info.(string)$adress.(string)$sep_info.
+    $school_info = (string)$school_district.(string)$sep_info.(string) $school_info.(string)$sep_info.(string)$full_school_name.(string)$sep_info.(string)$adress.(string)$sep_info.
         (string)$director.(string)$sep_info.(string)$director_name.(string)$sep_info.(string)$phone.(string)$sep_info.(string)$email.
         (string)$sep_info.(string)$website.(string)$sep_info.(string)$info.(string)$sep_school;
 

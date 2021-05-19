@@ -1,262 +1,69 @@
-<!doctype html>
+<?php
+session_start();
+include("auto.php");
+
+if(!$_SESSION["is_auth"]){
+    $GLOBALS['auth']=new AuthClass();
+}
+
+if (isset($_POST["login"]) && isset($_POST["password"])) { //Если логин и пароль были отправлены
+    if (!$GLOBALS['auth']->auth($_POST["login"], $_POST["password"])) { //Если логин и пароль введен не правильно
+        echo "<p style=\"color:red;\">Логин и пароль введен не правильно!</p>";
+    }
+}
+$temp_main_link="/";
+
+?>
+<!DOCTYPE html>
 <html lang="en">
-
-
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
     content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
     integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-    <script type="text/javascript" src="json/district.json"></script>
     <script type="text/javascript" src="js/test.js"></script>
     <title>Цифровая образовательная среда Орловской области</title>
 
 </head>
 
-<?php 
-include("header.phtml");
-$temp_main_links="/index.phtml";
-
-?>
+<?php include("header.phtml")?>
 <body>
 
-    <?php
-    $fp = fopen('file/districts.txt', 'r');
+<h2 id="main">Цифровая среда дополнительного образования Орловской области</h2>
+<div class="content row" >
 
-    if ($fp){
-        while (!feof($fp))
-        {
-            $mytext = fgets($fp, 999);
+            <div class="map-block col" >
+                <div class="map" >
+                    <?php include("map.phtml"); ?>
+                </div>
+            </div>
 
+            <div class="right-block col">
+                <?php include("content.phtml"); ?>
+            </div>
+</div>
+</body>
+
+<?php include("footer.phtml")?>
+
+
+
+</html>
+<script type="text/javascript" src="js/script.js"></script>
+<script type="text/javascript">
+
+    logo_exit.onclick = function(){
+        var isAdmin = confirm("Вы точно хотите выйти?");
+        if(isAdmin){
+            <?php $GLOBALS['auth']->out();?>
         }
     }
-    else echo "Ошибка при открытии файла";
-    $district = explode(",", $mytext);
-    fclose($fp);
-    $school = [];
-    ?>
-<h2>Цифровая среда дополнительного образования Орловской области</h2>
-<div class="content" >
-    <div class="left-block">
-        <div class="region" id="region" style="display: block;">
-            <h4 id="title" href="#regions">Районы Орловской области:</h4>
-            <div class="list-group" >
-                <!-- Загрузка регионов Орловской области из файла district.json -->
-                <script>
-                  loadDistrict();
-                </script>
-
-            </div>
-        </div>
-
-
-        <div class="district" id = "district" style="display: none;">
-            <a href="<?=$temp_main_links?>" id ="reg_dist">Районы Орловской области <a>
-            <h4 id = "title">Образовательные учреждения:</h4>
-            <div class="list-group" id = "d-group">
-
-                <script>
-
-                    let i;
-                    let regCollection =  document.getElementsByClassName('reg');
-
-                    for (i = 0; i < regCollection.length; i++) {
-
-                        regCollection[i].onclick = function () {
-                            document.getElementById('region').style.display = 'none';
-                            document.getElementById('district').style.display = 'block';
-                            document.getElementById('school').style.display = 'none';
-                            var index = i+1;
-                            var  file = "file/district"+index+".txt";
-                            
-                            <?php
-
-$filename = "file/district1.txt";
-$book_content = file_get_contents($filename);
- 
-$book_content_lowercase = strtolower($book_content);
- 
-$individual_words = explode('๏', $book_content_lowercase);
-
-    
-                            $file = "file/district1.txt";
-                            $sep_info = "๏";
-                            $sep_school = "๑";
-                            $fp = fopen($file, 'r');
-                          if ($fp){
-                              while (!feof($fp))
-                              {
-                                  $mytext = fgets($fp, 999);
-
-                              }
-                          }
-                          else echo "Ошибка при открытии файла";
-                          $school = explode($sep_school, $mytext);
-                          fclose($fp);
-
-                          ?>
-
-                        }
-                    }
-                    var School =[];
-                    <?php for( $i=0; $i< count($school); $i++ ) {
-                    $name_school =  explode($sep_info, $school[$i]);?>
-                    School.push("<?php echo $name_school[1]?>");
-                    <?php } ?>
-                    for (let i = 0; i < School.length-1; i++) {
-                        let div = document.createElement('div');
-                        div.innerHTML = '<li class="list-group-item" ><a class="s" href="#s'+ i +'" id="s'+ i +'">' + School[i] + '</a><?php if ($auth){?> <i class="fas fa-edit"></i> <i class="fas fa-times"><?}?></li>';
-                        district.append(div);
-                    }
-                </script>
-            </div>
-            <?php if ($auth){?>
-            <button type="button" class="btn btn-outline-secondary" id="add_school">Добавить образовательное учреждение</button>
-            <?php }?>
-        </div>
-        <div class="school" id="school" style="display: none;">
-           <p>
-               <a href="<?=$temp_main_links?>" id ="reg_s" >Районы Орловской области / </a>
-               <a href="#" id ="dist_s">Образовательные учреждения</a>
-           </p>
-            <h4>Описание образовательного учреждения </h4>
-            <?php
-
-            $file = "file/district1.txt";
-
-            $fp = fopen($file, 'r');
-            if ($fp){
-                while (!feof($fp))
-                {
-                    $mytext = fgets($fp, 999);
-
-                }
-            }
-            else echo "Ошибка при открытии файла";
-            $school = explode(";", $mytext);
-            fclose($fp);
-
-            ?>
-
-
-            <?php if ($auth){?>
-
-            <form action="school.php" method="post">
-                <div class="btn-group" role="group">
-                    <button type="button" class="btn btn-outline-secondary" id = "cancel">Отменить</button>
-                    <button type='submit' class="btn btn-outline-secondary" id="save">Сохранить</button>
-                </div>
-                <?php }?>
-                <div class="input-group">
-                   <span class="input-group-text">Район: </span>
-                    <?php if ($auth){?>
-                   <input type="text" class="form-control" name="school_district" placeholder="Район" aria-label="Район" aria-describedby="addon-wrapping" readonly >
-                    <?php }else{?>
-                    <li class="list-group-item" style="border-color: white">Район</li>
-                    <?php }?>
-                </div>
-                <div class="input-group">
-                    <span class="input-group-text">Учреждение дополнительного образования: </span>
-                    <?php if ($auth){?>
-                    <input type="text" name="school_name" class="form-control" placeholder="Учреждение дополнительного образования" aria-label="Учреждение дополнительного образования" aria-describedby="addon-wrapping" required>
-                    <?php }else{?>
-                        <li class="list-group-item" style="border-color: white">Учреждение дополнительного образования</li>
-                    <?php }?>
-                </div>
-                <div class="input-group">
-                    <span class="input-group-text">Полное название: </span>
-                    <?php if ($auth){?>
-                    <input type="text" name="full_school_name" class="form-control" placeholder="Полное название" aria-label="Полное название" aria-describedby="addon-wrapping" required>
-                    <?php }else{?>
-                    <li class="list-group-item" style="border-color: white">Полное название</li>
-                    <?php }?>
-                </div>
-                <div class="input-group">
-                    <span class="input-group-text">Полный адрес: </span>
-                    <?php if ($auth){?>
-                    <input type="text" name="adress" class="form-control" placeholder="Полный адрес" aria-label="Полный адрес" aria-describedby="addon-wrapping" required>
-                    <?php }else{?>
-                        <li class="list-group-item" style="border-color: white">Полный адрес</li>
-                    <?php }?>
-                </div>
-                <div class="input-group">
-                    <span class="input-group-text">Руководитель/директор: </span>
-                    <?php if ($auth){?>
-                    <input type="text" name="director" class="form-control" placeholder="Руководитель/директор" aria-label="Руководитель/директор" aria-describedby="addon-wrapping" pattern="[А-я][А-Яа-я' -]+">
-                    <?php }else{?>
-                        <li class="list-group-item" style="border-color: white">Руководитель/директор</li>
-                    <?php }?>
-                </div>
-                <div class="input-group">
-                    <span class="input-group-text">ФИО: </span>
-                    <?php if ($auth){?>
-                    <input type="text" name="director_name" class="form-control" placeholder="ФИО" aria-label="ФИО" aria-describedby="addon-wrapping" pattern="[А-я][А-Яа-я' -]+">
-                    <?php }else{?>
-                        <li class="list-group-item" style="border-color: white">ФИО</li>
-                    <?php }?>
-                </div>
-                <div class="input-group">
-                    <span class="input-group-text">Телефон: </span>
-                    <?php if ($auth){?>
-                    <input name="phone" class="form-control" placeholder="Телефон" aria-label="Телефон" aria-describedby="addon-wrapping" type="tel">
-                    <?php }else{?>
-                        <li class="list-group-item" style="border-color: white">Телефон</li>
-                    <?php }?>
-                </div>
-                <div class="input-group">
-                    <span class="input-group-text">E-mail: </span>
-                    <?php if ($auth){?>
-                    <input name="email" class="form-control" placeholder="E-mail" aria-label="E-mail" aria-describedby="addon-wrapping"  type="email">
-                    <?php }else{?>
-                        <li class="list-group-item" style="border-color: white">E-mail</li>
-                    <?php }?>
-                </div>
-                <div class="input-group">
-                    <span class="input-group-text">Ссылка на сайт: </span>
-                    <?php if ($auth){?>
-                    <input name="website" class="form-control" placeholder="Ссылка на сайт" aria-label="РаСсылка на сайтйон" aria-describedby="addon-wrapping"  type="url">
-                    <?php }else{?>
-                        <li class="list-group-item" style="border-color: white">Ссылка на сайт</li>
-                    <?php }?>
-                </div>
-                <div class="input-group">
-                    <span class="input-group-text">Дополнительная информация об учреждении</span>
-                    <?php if ($auth){?>
-                    <textarea class="form-control"  name="info" aria-label="Дополнительная информация об учреждении:"></textarea>
-                    <?php }else{?>
-                        <li class="list-group-item" style="border-color: white">Дополнительная информация об учреждении </li>
-                    <?php }?>
-                </div>
-            </form>
-        </div>
-    </div>
-   
-    <div class="map-block">
-        <div class="map" >
-            <?php
-            include("map.phtml");
-            ?>
-        </div>
-    </div>
-
-</div>
-
-</body>
-<?php include("footer.phtml")?>
-</html>
-
-<script src="js/script.js"></script>
-<?php if ($auth){?>
-<script src="js/admin.js"></script>
-<?php }?>
-
-<script>
-
 </script>
+
+
+

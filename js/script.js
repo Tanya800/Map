@@ -1,160 +1,199 @@
-const 
+const
 	$regionLiLinks=document.querySelectorAll('.region li'),
 	$schoolLinks=document.querySelectorAll('.district li'),
 	$mapLinks = document.querySelectorAll('.map a');
-
-
 
 let clickOn=false;
 const standStyle=`fill:#B5E2FF;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;paint-order:markers stroke fill;`;
 const chosenStyle=`fill: #79CAFF; stroke:#000000;stroke-width: 3px;`;
 
-const chosenColor="#79CAFF";
-const hoverColor=`background-color: #c0effa;
-    text-shadow: 0 0 10px #c0effa;`
 const svg=document.querySelector('svg');
 const viewB=svg.getAttribute('viewBox');
-const temp_main_links="/index.phtml";
+const temp_main_links="/";
+
+// добавление подсветки и свойства visible для всех участков карты
+$mapLinks.forEach(function (item,i,$mapLinks){
+	item.setAttribute("visibility","visible");
+	let currentTitle="<title>"+ 'orel'+"</title>"
+	item.insertAdjacentHTML("beforeend",currentTitle);
+});
+
+$schoolLinks.forEach(function (item,i,$schoolLinks) {
+	let a = item.querySelector('a');
+	console.log(item);
+	console.log(a);
+})
 
 //показать всю карту
 function showMap(){
+
 	let allPath=document.querySelectorAll('path');
 	allPath.forEach(function(item,i,allPath){
 		item.setAttribute('visibility','visible');
 	});
 	svg.setAttribute('viewBox',viewB);
 	svg.setAttribute('transform','scale(1)');
+
 }
 
 //отобразить лишь один регион по его className
-function regVisible(className,targetBounding){
-	
-	let allPath=document.querySelectorAll('path');
-	
-	let currentReg ;//= allPath.querySelector(`a[href="${className}"]`);
+function showRegion(currentPath, className, targetBounding){
 
-	for (let elem of $mapLinks) {
-		if (elem.matches(`a[href="${className}"]`)) {
-		    	currentReg=elem;
-		}
-	}
-		
-	let currentPath = currentReg.querySelector('path');
+	document.getElementById('region').style.display = 'none';
+	document.getElementById('district').style.display = 'block';
+	document.getElementById('school').style.display = 'none';
+
+	//изменение отображения карты
+	let allPath=document.querySelectorAll('path');
 	if(targetBounding){
 		let viewXY=targetBounding.x-5+' '+(targetBounding.y-10)+' '+(targetBounding.width+10)+' '+(targetBounding.height+20);
 		svg.setAttribute('viewBox',viewXY);
 	}
-		
+
 	svg.style.transformOrigin = "50% 20%";
-	svg.setAttribute('transform','scale(0.5)');
+	svg.setAttribute('transform','scale(0.9)');
+
 	allPath.forEach(function(item,i,allPath){
-		if(item.id!=currentPath.id ) item.setAttribute('visibility','hidden');
+		if(item.id!==currentPath.id ) item.setAttribute('visibility','hidden');
 	});
 
-	let schools = document.createElement('g');
-	
-	let circle = document.createElement('circle');
-	let cx = targetBounding.x + 15;
-	let cy = targetBounding.y + 15;
-	circle.setAttribute("visibility","visible");
-	circle.setAttribute("cx",cx);
-	circle.setAttribute("cy",cy);
-	circle.setAttribute("r","30");
-	circle.setAttribute("fill","#d00");
-	schools.innerHTML = ' <circle r="1363" cx="93" cy="65" />';
-	svg_main.insertAdjacentElement("beforeEnd",schools);
-    //schools.append(circle);
-    //svg_main.append(schools);
-    
+
+	let currentElement = document.querySelector(`.map a[href="${className}"]`);
+	let id_dist=className.replace(/[^0-9]/g, '');
+	console.log(currentElement);
+	showLinksSchool(id_dist);
+	showMapSchools(id_dist,currentElement,targetBounding);
+
 }
 
+//отображение школ на карте в выбранном регионе
+function showMapSchools(id_dist,currentElement,targetBounding){
 
-$mapLinks.forEach(function (item,i,$mapLinks){
-	item.setAttribute("visibility","visible");
-	let titleForDist= document.createElement('title');
-	let districts = JSON.parse(data);
-	let currentTitle="<title>"+ districts[i].name+"</title>"
-	//titleForDist.textContent(districts[i].name);
-	item.insertAdjacentHTML("beforeend",currentTitle);
-});
+	let schools = document.querySelectorAll('.s');
 
+
+	let svgSchools=document.createElementNS("http://www.w3.org/2000/svg", 'svg');
+	svgSchools.setAttribute("x",targetBounding.x);
+	svgSchools.setAttribute("y",targetBounding.y);
+	svgSchools.setAttribute("width",targetBounding.width);
+	svgSchools.setAttribute("height",targetBounding.height);
+
+	$schoolLinks.forEach(function (item,i,schools) {
+		let currentSchool=item.querySelector('a');
+		console.log(currentSchool);
+		if(currentSchool.getAttribute('id_district') === id_dist){
+			let circle = document.createElementNS("http://www.w3.org/2000/svg", 'circle');
+			let id = currentSchool.getAttribute('id');
+			let x =currentSchool.getAttribute('data_x');
+			let y=currentSchool.getAttribute('data_y');
+			let radious= '3';
+			circle.setAttribute("cx",x);
+			circle.setAttribute("cy",y);
+			circle.setAttribute("r",radious);
+			circle.setAttribute("fill","#d00");
+			svgSchools.insertAdjacentElement("beforeEnd",circle);
+		}
+	});
+	currentElement.insertAdjacentElement("afterEnd",svgSchools);
+}
+
+//отображение списка школ в выбранном регионе
+function showLinksSchool(id_district) {
+
+	$schoolLinks.forEach(function (item,i,$schoolLinks) {
+		let currentSchool=item.querySelector('a');
+		console.log(id_district);
+		console.log(currentSchool.getAttribute('id_district'));
+		if(currentSchool.getAttribute('id_district') === id_district) item.style.display='block';
+		else  item.style.display='none';
+	})
+}
+
+// для всех участков карты отбработка событий: mouseenter, mouseleave, click
 $mapLinks.forEach(el => {
+
 	el.addEventListener('mouseenter', (e) => {
+
 		let self = e.currentTarget;
 		let selfClass = self.getAttribute('href');
-		
+
 		let currentPath = self.querySelectorAll('path');
 		if (currentPath) currentPath.forEach(el => el.style.cssText = chosenStyle);
-		
+
 		let currentElement = document.querySelector(`li[data-id="${selfClass}"]`);
 		currentElement.classList.add('list-group-item-active');
+
 	});
 
+
 	el.addEventListener('mouseleave', (e) => {
+
 		let self = e.currentTarget;
 		let selfClass = self.getAttribute('href');
-		
+
 		let currentPath = self.querySelectorAll('path');
 		if (currentPath) currentPath.forEach(el => el.style.cssText = standStyle);
 
 		let currentElement = document.querySelector(`li[data-id="${selfClass}"]`);
 		currentElement.classList.remove('list-group-item-active');
-		
-	});
 
+	});
+	
 	el.addEventListener('click', (e) => {
+
 		clickOn=!clickOn;
 
 		let self = e.currentTarget;
-		let selfClass = self.getAttribute('href');	
+		let selfClass = self.getAttribute('href');
 		let currentPath=self.querySelector('path');
-		let allPath=document.querySelectorAll('path');
 		let targetBounding = self.getBBox();
-		let texts=document.querySelectorAll('tspan');
-		
+
 		if(clickOn){
-			regVisible(selfClass,targetBounding);
+			showRegion(currentPath,selfClass,targetBounding);
 		}else{
 			showMap();
 			document.location.replace(temp_main_links);
 		}
 
-		// ANIMATION HERE
-   		// var transformOriginXPercent = (50 - transformOriginX * 100 / mapBounding.width) * scale;
-   		// var transformOriginYPercent = (50 - transformOriginY * 100 / mapBounding.height) * scale;
-    	// var scaleText = "scale(" + scale + ")";
-    	// var translateText = "translate(" + transformOriginXPercent + "%," + transformOriginYPercent + "%)";
-
-     //    map.style.transformOrigin = "50% 50%";
-     //    map.style.transform = translateText + " " + scaleText;
-		
 	});
+
 });
 
+
+
+// для всех элементов списка школ карты отбработка событий: mouseenter, mouseleave, click
 $schoolLinks.forEach(el=>{
 	el.addEventListener('mouseenter', (e) => {
-		
+
 		let self = e.currentTarget;
 		let selfLink = self.querySelector('a');
 		let selfClass = selfLink.getAttribute('href');
-		
+
 		el.classList.add('list-group-item-active');
-		
+
 	});
 
 	el.addEventListener('mouseleave',(e) => {
 		let self = e.currentTarget;
 		let selfLink = self.querySelector('a');
 		let selfClass = selfLink.getAttribute('href');
-		
+
 		el.classList.remove('list-group-item-active');
-		
+
+	});
+
+	el.addEventListener('click',(e)=>{
+		document.getElementById('region').style.display = 'none';
+		document.getElementById('district').style.display = 'none';
+		document.getElementById('school').style.display = 'block';
+		//подсветка иконки на карте и переход на страничку школы----------------------------------Добавить
 	});
 });
 
+// для всех элементов списка регионов отбработка событий: mouseenter, mouseleave, click
 $regionLiLinks.forEach(el => {
 	el.addEventListener('mouseenter', (e) => {
-		
+
 		let self = e.currentTarget;
 		let selfLink = self.querySelector('a');
 		let selfClass = selfLink.getAttribute('href');
@@ -176,77 +215,61 @@ $regionLiLinks.forEach(el => {
 
 
 	el.addEventListener('click',(e)=>{
-
+		clickOn=!clickOn;
+	
 		document.getElementById('region').style.display = 'none';
-        document.getElementById('district').style.display = 'block';
-        document.getElementById('school').style.display = 'none';
-        
-        let self = e.currentTarget;
+		document.getElementById('district').style.display = 'block';
+		document.getElementById('school').style.display = 'none';
+		
+		let self = e.currentTarget;
 		let selfLink = self.querySelector('a');
 		let selfClass = selfLink.getAttribute('href');
-
-		// отображение региона на карте 
+	
+		// отображение региона на карте
 		let currentElement = document.querySelector(`.map a[href="${selfClass}"]`);
-        let newBox = currentElement.getBBox();
-        regVisible(selfClass,newBox);
+		let currentPath=currentElement.querySelector('path');
+		let newBox = currentElement.getBBox();
 
-
-        // отображение левого меню
-
-
-    });
+		showRegion(currentPath,selfClass,newBox);
+	
+	});
 });
 
 
-    reg_dist.onclick = function () {
-        document.getElementById('region').style.display = 'block';
-        document.getElementById('district').style.display = 'none';
-    }
-
-    reg_s.onclick = function () {
-        document.getElementById('school').style.display = 'none';
-        document.getElementById('region').style.display = 'block';
-         showMap();
-    }
-    dist_s.onclick = function () {
-        document.getElementById('school').style.display = 'none';
-        document.getElementById('district').style.display = 'block';
-    }
+reg_s.onclick = function () {
+	document.getElementById('school').style.display = 'none';
+	document.getElementById('region').style.display = 'block';
+	showMap();
+}
+dist_s.onclick = function () {
+	document.getElementById('school').style.display = 'none';
+	document.getElementById('district').style.display = 'block';
+}
 
 
 
-    reg_dist.onclick = function () {
-        document.getElementById('region').style.display = 'block';
-        document.getElementById('district').style.display = 'none';
-        showMap();
-    }
+reg_dist.onclick = function () {
+	document.getElementById('region').style.display = 'block';
+	document.getElementById('district').style.display = 'none';
+	showMap();
+}
 
-    reg_s.onclick = function () {
-        document.getElementById('school').style.display = 'none';
-        document.getElementById('region').style.display = 'block';
-         showMap();
-    }
-    dist_s.onclick = function () {
-        document.getElementById('school').style.display = 'none';
-        document.getElementById('district').style.display = 'block';
-    }
+reg_s.onclick = function () {
+	document.getElementById('school').style.display = 'none';
+	document.getElementById('region').style.display = 'block';
+	showMap();
+}
+dist_s.onclick = function () {
+	document.getElementById('school').style.display = 'none';
+	document.getElementById('district').style.display = 'block';
+}
 
 
-
-    let mregCollection =  document.getElementsByClassName('map-region');
-    for (i = 0; i < mregCollection.length; i++) {
-        mregCollection[i].onclick = function () {
-            document.getElementById('region').style.display = 'none';
-            document.getElementById('district').style.display = 'block';
-            document.getElementById('school').style.display = 'none';
-        }
-    }
-
-    let sCollection =  document.getElementsByClassName('s');
-    for (i = 0; i < sCollection.length; i++) {
-        sCollection[i].onclick = function () {
-            document.getElementById('region').style.display = 'none';
-            document.getElementById('district').style.display = 'none';
-            document.getElementById('school').style.display = 'block';
-        }
-    }
+// let mregCollection =  document.getElementsByClassName('map-region');
+// for (i = 0; i < mregCollection.length; i++) {
+// 	mregCollection[i].onclick = function () {
+// 		document.getElementById('region').style.display = 'none';
+// 		document.getElementById('district').style.display = 'block';
+// 		document.getElementById('school').style.display = 'none';
+// 	}
+// }

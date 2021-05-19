@@ -1,0 +1,59 @@
+<div class="region " id="region" style="display: block;">
+    <h4 id="title" href="#regions">Районы Орловской области:</h4>
+    <div class="list-group">
+        <?php include("db/db_district.phtml")?>
+    </div>
+</div>
+
+<div class="district" id = "district" style="display: none;">
+    <a href="/#main" id ="reg_dist">Районы Орловской области <a>
+            <h4 id = "title">Образовательные учреждения:</h4>
+            <?php if ($GLOBALS['auth']->isAuth()){?>
+                <button type="button" class="btn btn-outline-secondary" id="add_school">Добавить образовательное учреждение</button>
+            <?php }?>
+            <div class="list-group" id = "d-group">
+                <?php
+                include("db/db_school.phtml")
+                ?>
+            </div>
+</div>
+
+<div class="school" id="school" style="display: none;">
+    <p>
+        <a href="/#main" id ="reg_s" >Районы Орловской области / </a>
+        <a href="/#title" id ="dist_s">Образовательные учреждения</a>
+    </p>
+    <h4>Описание образовательного учреждения </h4>
+    <?php include("db/db_infoschool.phtml")?>
+</div>
+
+<script>
+
+    add_school.onclick = function () {
+        document.getElementById('district').style.display = 'none';
+        document.getElementById('del').style.display = 'none';
+        document.getElementById('school').style.display = 'block';
+        document.getElementById('school_photo').value = "";
+        document.getElementById('school_name').value = "";
+        document.getElementById('full_school_name').value = "";
+        document.getElementById('adress').value = "";
+        document.getElementById('director_name').value = "";
+        document.getElementById('director').value = "";
+        document.getElementById('phone').value = "";
+        document.getElementById('email').value = "";
+        document.getElementById('website').value = "";
+        document.getElementById('info').value = "";
+    }
+
+    del.onclick = function () {
+        //тут должно быть удаление школы из бд
+        document.getElementById('school').style.display = 'none';
+        document.getElementById('district').style.display = 'block';
+    }
+    
+    cancel.onclick = function () {
+       document.getElementById('school').style.display = 'none';
+       document.getElementById('district').style.display = 'block';
+    }
+    
+</script>

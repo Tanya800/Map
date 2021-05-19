@@ -1,0 +1,22 @@
+<?php
+include("connect.php");
+$link = mysqli_connect($host, $user, $password, $database)
+or die("Ошибка " . mysqli_error($link));
+
+$query ="SELECT * FROM district";
+$result = mysqli_query($link, $query) or die("Ошибка " . mysqli_error($link));
+$districts = [];
+
+
+
+if($result)
+{
+    while($row = $result->fetch_assoc())// получаем все строки в цикле по одной
+    {
+        //array_push($districts,$row );
+        echo "<li class='list-group-item'  data-id='#reg".$row['id_district']."'><a class='reg' href='#reg".$row['id_district']."'style='text-decoration: none;' id='reg".$row['id_district']."'>".$row['name']."</a></li>";
+    }
+}
+
+mysqli_close($link);
+?>

@@ -1,0 +1,20 @@
+<?php
+
+include("connect.php");
+$link = mysqli_connect($host, $user, $password, $database)
+or die("Ошибка " . mysqli_error($link));
+// исправить не работает выборка where id_district = .$id_district
+//$query ="SELECT id_school, name FROM school WHERE id_district =".$district.";";
+$query ="SELECT id_school, name,point_x,point_y,id_district FROM school " ;
+
+$result = mysqli_query($link, $query) or die("Ошибка " . mysqli_error($link));
+if($result)
+{
+    while($row = $result->fetch_assoc())// получаем все строки в цикле по одной
+    {
+        echo "<li class='list-group-item' ><a class='s' href='#s" . $row['id_school'] . "' style='text-decoration: none;'  id='s" . $row['id_school'] . "' data_x='". $row['point_x'] ."' data_y='" . $row['point_y'] . "' id_district='" . $row['id_district'] . "' >" . $row['name'] . "</a></li>";
+    }
+}
+mysqli_close($link);
+
+?>

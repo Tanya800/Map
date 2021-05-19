@@ -1,0 +1,16 @@
+<?php
+include("connect.php");
+$link = mysqli_connect($host, $user, $password, $database)
+or die("Ошибка " . mysqli_error($link));
+
+$query ="SELECT * FROM admin where id_admin = 0;";
+$result = mysqli_query($link, $query) or die("Ошибка " . mysqli_error($link));
+if($result)
+{
+    while($row = $result->fetch_assoc())// получаем все строки в цикле по одной
+    {
+        echo "Логин ".$row['login']."</br>Пароль ".$row['password']."</dr>";
+    }
+}
+mysqli_close($link);
+?>
