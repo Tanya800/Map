@@ -1,0 +1,111 @@
+<?php
+include("connect.php");
+$link = mysqli_connect($host, $user, $password, $database)
+or die("Ошибка " . mysqli_error($link));
+
+$id_school = -500;
+if($_POST['id_school']  != null){
+    $id_school = $_POST['id_school'];
+}
+
+$full_name ="";
+$name ="";
+$id_district ="";
+$point_y = "";
+$point_x ="";
+$img = "";
+$adres =  "";
+$director = "";
+$director_name = "";
+$phone = "";
+$email = "";
+$site = "";
+$info = "";
+$name_dist = "";
+//$query ="SELECT * FROM school WHERE id_school =" . $id_school . ";" ;
+$query ="SELECT `school`.*, `district`.`name` as `name_dist` FROM `school`, `district` WHERE `district`.`id_district` =`school`.`id_district` and id_school =" . $id_school ;
+
+$result = mysqli_query($link, $query) or die("Ошибка " . mysqli_error($link));
+if($result)
+{
+    while($row = $result->fetch_assoc())// получаем все строки в цикле по одной
+    {
+        $full_name = $row['full_name'];
+        $name = $row['name'];
+        $id_district = $row['id_district'];
+        $point_y = $row['point_y'];
+        $point_x = $row['point_x'];
+        $img = $row['img'];
+        $adres =  $row['adres'];
+        $director = $row['director'];
+        $director_name = $row['director_name'];
+        $phone = $row['phone'];
+        $email = $row['email'];
+        $site = $row['site'];
+        $info = $row['info'];
+        $id_school = $row['id_school'];
+        $name_dist = $row['name_dist'];
+
+    }
+}else {
+    $full_name = "";
+    $name = "";
+    $id_district = "";
+    $point_y = "";
+    $point_x = "";
+    $img = "";
+    $adres = "";
+    $director = "";
+    $director_name = "";
+    $phone = "";
+    $email = "";
+    $site = "";
+    $info = "";
+    $name_dist = "";
+}
+
+    $form_school =
+        '<div class="card" style="width:100%">'.
+        '<button type="submit" class="btn btn-outline-secondary" name="point" id="add_point_button" style="width: 98%;">Добавить школу на карте</button>' .
+        '<form action="db/db_insert_school.phtml" id="schoolForm" method="post">' .
+        '<div class="btn-group" role="group" style="width: 100%;">' .
+        '<button type="submit" class="btn btn-outline-secondary" name="del">Удалить</button>' .
+        '<button type="submit" class="btn btn-outline-secondary" id="saveButton" name="save">Сохранить</button>' .
+        '</div>' .
+        '<input style="width: 100%;display: none;" type="text" class="form-control" name="id_school" id="id_school" value="' . $id_school . '" placeholder="id_school"></br>' .
+        '<input style="width: 100%;" type="text" class="form-control" name="point_x" id="point_x" value="' . $point_x . '" ></br>' .
+        '<input style="width: 100%;" type="text" class="form-control" name="point_y" id="point_y" value="' . $point_y . '" ></br>' .
+        '<p class="text_school_info"><strong>Ссылка на фото: </strong></p>' .
+        '<input style="width: 100%" type="text" class="form-control" name="school_photo" id="school_photo" value="' . $img . '" placeholder="Ссылка на фото" aria-label="Ссылка на фото" aria-describedby="addon-wrapping"></br>' .
+        '<img src="' . $img . '" class="card-img-top" >' .
+        '<div class="card-body">' .
+        '<p class="text_school_info"><strong>Район: </strong></p>' .
+        '<input style="width: 100%;display:none;" type="text" class="form-control" name="school_district" id="school_district" value="' . $id_district . '" placeholder="Район" aria-label="Район" aria-describedby="addon-wrapping" readonly>' .
+        '<input style="width: 100%;" type="text" class="form-control" name="name_dist" id="name_dist" value="' . $name_dist . '" placeholder="Район" aria-label="Район" aria-describedby="addon-wrapping" readonly>' .
+        '<p class="text_school_info"><strong>Учреждение дополнительного образования: </strong></p>' .
+        '<input style="width: 100%" type="text" name="school_name" id="school_name" class="form-control" placeholder="Учреждение дополнительного образования" value="' . $name . '"  aria-describedby="addon-wrapping" required>' .
+        '<p class="text_school_info"><strong>Полное название: </strong></p>' .
+        '<input style="width: 100%" type="text" name="full_school_name" id="full_school_name" class="form-control" placeholder="Полное название"  value="' . $full_name . '"  aria-describedby="addon-wrapping" required>' .
+        '<p class="text_school_info"><strong>Полный адрес: </strong></p>' .
+        '<input style="width: 100%" type="text" name="adress" id="adress" class="form-control" placeholder="Полный адрес" value="' . $adres . '" aria-describedby="addon-wrapping" required>' .
+        '<p class="text_school_info"><strong>Руководитель/директор: </strong></p>' .
+        '<input style="width: 100%" type="text" name="director" id="director" class="form-control" placeholder="Руководитель/директор" value="' . $director . '" aria-describedby="addon-wrapping" pattern="[А-я][А-Яа-я\' -]+">' .
+        '<p class="text_school_info"><strong>ФИО: </strong></p>' .
+        '<input style="width: 100%" type="text" name="director_name" id="director_name" class="form-control" placeholder="ФИО" value="' . $director_name . '" aria-describedby="addon-wrapping" pattern="[А-я][А-Яа-я\' -]+">' .
+        '<p class="text_school_info"><strong>Телефон: </strong></p>' .
+        '<input style="width: 100%" name="phone" id="phone" class="form-control" placeholder="Телефон" value="' . $phone . '" aria-describedby="addon-wrapping" type="tel">' .
+        '<p class="text_school_info"><strong>E-mail: </strong></p>' .
+        '<input style="width: 100%" name="email" id="email" class="form-control" placeholder="E-mail" value="' . $email . '" aria-describedby="addon-wrapping"  type="email">' .
+        '<p class="text_school_info"><strong>Ссылка на сайт: </strong></p>' .
+        '<input style="width: 100%" name="website" id="website" class="form-control" placeholder="Ссылка на сайт" value="' . $site . '" aria-describedby="addon-wrapping"  type="url">' .
+        '<p class="text_school_info"><strong>Дополнительная информация об учреждении: </strong></p>' .
+        '<textarea style="width: 100%" class="form-control"  name="info" id="info" value="' . $info . '">' . $info . '</textarea>' .
+        '</div>' .
+        '</div>' .
+        '</form>';
+
+echo $form_school;
+
+mysqli_close($link);
+?>
+

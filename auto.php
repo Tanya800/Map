@@ -1,9 +1,12 @@
 <?php
+session_start();
+
+$_SESSION["true"]=true;
 
 class AuthClass {
-    private $_login = "admin"; //Устанавливаем логин
-    private $_password = "12345"; //Устанавливаем пароль
- 
+    private $_login ="admin"; //Устанавливаем логин
+    private $_password="12345"; //Устанавливаем пароль
+
     /**
      * Проверяет, авторизован пользователь или нет
      * Возвращает true если авторизован, иначе false
@@ -25,6 +28,7 @@ class AuthClass {
         if ($login == $this->_login && $passwors == $this->_password) { //Если логин и пароль введены правильно
             $_SESSION["is_auth"] = true; //Делаем пользователя авторизованным
             $_SESSION["login"] = $login; //Записываем в сессию логин пользователя
+            $_SESSION["true"]=false;
             return true;
         }
         else { //Логин и пароль не подошел
@@ -48,6 +52,7 @@ class AuthClass {
         session_destroy(); //Уничтожаем
     }
 }
-$auth= new AuthClass();
+
+$admin = new AuthClass();
 
 ?>

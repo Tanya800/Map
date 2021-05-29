@@ -1,24 +1,23 @@
 <?php
 session_start();
-$_SESSION['test']= '1234';
-$temp_main_link="/index.phtml";
+$temp_main_link=$_SERVER['PHP_SELF'];
 ?>
 <header>
     <div class="header">
     	<div class="logo_admin col" id="logo_admin">
-    	<?php 
-    		if ($auth->isAuth()) {
-    			echo "Режим администратора ". $auth->getLogin();
-    			?>
-    			<a href=""><i id="logo_exit" class="fas fa-sign-out-alt fa-2x"></i></a>
-    			<?php
-    		}
-    		else{
-    			?>
-    			<a href="/authorization.phtml"><i class="fas fa-user-cog fa-2x"></i></a>
-    		<?php };
-    	?>
-            
+            <?php
+            if ($GLOBALS['auth']) {
+                echo "Режим администратора " . $_SESSION['login'];
+                ?>
+                <a href=""><i id="logo_exit" class="fas fa-sign-out-alt fa-2x"></i></a>
+                <?php
+            } else {
+                ?>
+
+                <a href="/authorization.phtml"><i class="fas fa-user-cog fa-2x"></i></a>
+                <?php
+            }
+            ?>
         </div>
 
         <div class="emblem" >

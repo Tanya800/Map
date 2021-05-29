@@ -1,33 +1,23 @@
 <?php
-
 include("connect.php");
 $link = mysqli_connect($host, $user, $password, $database)
 or die("Ошибка " . mysqli_error($link));
 
-
-
-if($_POST['id_dist']  != null){
-$district = $_POST['id_dist'];
-}else{
-    $district = 500;
-}
-
-//НЕ УДАЛЯТЬ ПОЛЯ ИЗ ЗАПРОСА - ЭТО ВАЖНО БЛеН
-$query ="SELECT id_school, name,point_x,point_y,id_district FROM school WHERE id_district =".$district.";";
-
+$query ="SELECT id_district,name FROM district";
 $result = mysqli_query($link, $query) or die("Ошибка " . mysqli_error($link));
 
-//echo '<p id="id_dist" style="">'.$district.'</p>';
 $array_values = array();
+
+
+//
 if($result)
 {
     while($row = $result->fetch_assoc())// получаем все строки в цикле по одной
     {
+        //создание массива с индексами и названиями регионов
         $array_values[] = $row;
     }
 }
 echo json_encode($array_values);
 mysqli_close($link);
-
-
 ?>

@@ -1,59 +1,133 @@
 <?php
+
 include("connect.php");
 $link = mysqli_connect($host, $user, $password, $database)
 or die("Ошибка " . mysqli_error($link));
 
-$school_id = 'null';
-$school_photo = $_POST['school_photo'];
-$school_district = $_POST['school_district'];
-$school_name = $_POST['school_name'];
-$full_school_name = $_POST['full_school_name'];
-$adress = $_POST['adress'];
-$director = $_POST['director'];
-$director_name = $_POST['director_name'];
-$phone = $_POST['phone'];
-$email = $_POST['email'];
-$website = $_POST['website'];
-$info = "Созвездие";
-$point_x = 0;
-$point_y = 0;
-$id_district = 0;
+if(isset($_POST['del'])){
+    $id_school = $_POST['id_school'];
 
+    $query = 'DELETE FROM `school` WHERE id_school = '.$id_school;
 
+    $result = mysqli_query($link, $query) or die("Ошибка " . mysqli_error($link));
+    if($result)
+    {
+       // echo "<span style='color:blue;'>Данные удалены</span>";
+    }
 
-$query ="INSERT INTO `school`".
-"(`id_school`, `name`, `full_name`,".
-" `adres`, `director`, `director_name`,".
-" `phone`, `email`, `site`, `info`, `img`,".
-" `point_x`, `point_y`, `id_district`) VALUES".
-" (".$school_id.
-",'".$school_name.
-"','".$full_school_name.
-"','".$adress.
-"','".$director.
-"','".$director_name.
-"','".$phone.
-"','".$email.
-"','".$website.
-"','".$info.
-"','".$school_photo.
-"',".$point_x.
-",".$point_y.
-",".$id_district.
-");";
+    mysqli_close($link);
 
-//echo $query;
+    header ('Location: /');
 
-
-$result = mysqli_query($link, $query) or die("Ошибка " . mysqli_error($link));
-if($result)
-{
-    //echo "<span style='color:blue;'>Данные добавлены</span>";
 }
 
-mysqli_close($link);
+if (isset($_POST['save']))
+{
 
-header ('Location: /');
+    if($_POST['id_school']  != -500){
+
+        $id_school = $_POST['id_school'];
+        $school_photo = $_POST['school_photo'];
+        $school_district = $_POST['school_district'];
+        $school_name = $_POST['school_name'];
+        $full_school_name = $_POST['full_school_name'];
+        $adress = $_POST['adress'];
+        $director = $_POST['director'];
+        $director_name = $_POST['director_name'];
+        $phone = $_POST['phone'];
+        $email = $_POST['email'];
+        $website = $_POST['website'];
+        $info = $_POST['info'];
+        $point_x = $_POST['point_x'];
+        $point_y = $_POST['point_y'];
+        $id_district =$_POST['school_district'];
+
+        /*Изменение информации о школе*/
+        $query = 'UPDATE `school` SET '.
+            '`name`="'.$school_name.'",'.
+            '`full_name`="'.$full_school_name.'",'.
+            '`adres`="'.$adress.'",'.
+            '`director`= "'.$director.'",'.
+            '`director_name`="'.$director_name.'",'.
+            '`phone`="'.$phone.'",'.
+            '`email`="'.$email.'",'.
+            '`site`="'.$website.'",'.
+            '`info`="'.$info.'",'.
+            '`img`="'.$school_photo.'",'.
+            '`point_x`='.$point_x.','.
+            '`point_y`='.$point_y.','.
+            '`id_district`='.$id_district.
+            ' WHERE id_school = '.$id_school.';';
+
+        echo $query;
+
+        $result = mysqli_query($link, $query) or die("Ошибка " . mysqli_error($link));
+        if($result)
+        {
+      //         echo "<span style='color:blue;'>Данные изменены</span>";
+        }
+
+        mysqli_close($link);
+
+        header ('Location: /');
+    }else{
+
+        //Создание новой школы
+        $school_id = 'null';
+        $school_photo = $_POST['school_photo'];
+        $school_district = $_POST['school_district'];
+        $school_name = $_POST['school_name'];
+        $full_school_name = $_POST['full_school_name'];
+        $adress = $_POST['adress'];
+        $director = $_POST['director'];
+        $director_name = $_POST['director_name'];
+        $phone = $_POST['phone'];
+        $email = $_POST['email'];
+        $website = $_POST['website'];
+        $info = $_POST['info'];
+        $point_x = $_POST['point_x'];
+        //$point_x = 0;
+        $point_y = $_POST['point_y'];
+        //$point_y =0;
+        $id_district =$_POST['school_district'];
+
+
+
+        $query ="INSERT INTO `school`".
+            "(`id_school`, `name`, `full_name`,".
+            " `adres`, `director`, `director_name`,".
+            " `phone`, `email`, `site`, `info`, `img`,".
+            " `point_x`, `point_y`, `id_district`) VALUES".
+            " (".$school_id.
+            ",'".$school_name.
+            "','".$full_school_name.
+            "','".$adress.
+            "','".$director.
+            "','".$director_name.
+            "','".$phone.
+            "','".$email.
+            "','".$website.
+            "','".$info.
+            "','".$school_photo.
+            "',".$point_x.
+            ",".$point_y.
+            ",".$id_district.
+            ");";
+
+        echo $query;
+        $result = mysqli_query($link, $query) or die("Ошибка " . mysqli_error($link));
+        if($result)
+        {
+     //       echo "<span style='color:blue;'>Данные добавлены</span>";
+        }
+
+        mysqli_close($link);
+
+        header ('Location: /');
+}
+
+}
+
 ?>
 
 

@@ -13,7 +13,8 @@ if($result)
 {
     while($row = $result->fetch_assoc())// получаем все строки в цикле по одной
     {
-        //array_push($districts,$row );
+        //создание массива с районами для создания заголовка при  наведении
+        array_push($districts,$row['name']);
         echo "<li class='list-group-item'  data-id='#reg".$row['id_district']."'><a class='reg' href='#reg".$row['id_district']."'style='text-decoration: none;' id='reg".$row['id_district']."'>".$row['name']."</a></li>";
     }
 }

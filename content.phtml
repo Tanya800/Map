@@ -1,17 +1,27 @@
+<script>
+    var admin = 0;
+    <?php if($GLOBALS['auth']){ ?> admin = 1; <?php };?>
+    console.log(admin)
+</script>
 <div class="region " id="region" style="display: block;">
+
     <h4 id="title" href="#regions">Районы Орловской области:</h4>
     <div class="list-group">
         <?php include("db/db_district.phtml")?>
     </div>
+
 </div>
 
 <div class="district" id = "district" style="display: none;">
-    <a href="/#main" id ="reg_dist">Районы Орловской области <a>
+
+    <a href="/" id ="reg_dist">Районы Орловской области <a>
+
             <h4 id = "title">Образовательные учреждения:</h4>
-            <?php if ($GLOBALS['auth']->isAuth()){?>
+            <?php if ($GLOBALS['auth']){?>
                 <button type="button" class="btn btn-outline-secondary" id="add_school">Добавить образовательное учреждение</button>
             <?php }?>
-            <div class="list-group" id = "d-group">
+
+            <div class="list-group" id = "d_group">
                 <?php
                 include("db/db_school.phtml")
                 ?>
@@ -20,19 +30,24 @@
 
 <div class="school" id="school" style="display: none;">
     <p>
-        <a href="/#main" id ="reg_s" >Районы Орловской области / </a>
+        <a href="/" id ="reg_s" >Районы Орловской области / </a>
         <a href="/#title" id ="dist_s">Образовательные учреждения</a>
     </p>
     <h4>Описание образовательного учреждения </h4>
-    <?php include("db/db_infoschool.phtml")?>
+    <div id = "sh_info">
+        <?php
+        include("db/db_infoschooladmin.phtml");
+        ?>
+    </div>
 </div>
 
 <script>
 
+
     add_school.onclick = function () {
         document.getElementById('district').style.display = 'none';
-        document.getElementById('del').style.display = 'none';
         document.getElementById('school').style.display = 'block';
+
         document.getElementById('school_photo').value = "";
         document.getElementById('school_name').value = "";
         document.getElementById('full_school_name').value = "";
@@ -43,17 +58,30 @@
         document.getElementById('email').value = "";
         document.getElementById('website').value = "";
         document.getElementById('info').value = "";
+
+        id_dist = document.getElementById("id_dist").textContent;
+        console.log(id_dist);
+
+        document.getElementById('name_dist').value = $titlesReg[id_dist].name;
+        document.getElementById('school_district').value = id_dist;
+        $.ajax({
+            type:'POST',
+            url:'db/db_school.phtml',
+            data:{id_school:-500, }
+        });
+
     }
 
     del.onclick = function () {
-        //тут должно быть удаление школы из бд
         document.getElementById('school').style.display = 'none';
         document.getElementById('district').style.display = 'block';
     }
     
     cancel.onclick = function () {
+        console.log("cancel");
        document.getElementById('school').style.display = 'none';
        document.getElementById('district').style.display = 'block';
     }
+
     
 </script>

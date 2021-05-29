@@ -1,5 +1,17 @@
 <?php
 session_start();
+include("auto.php");
+if (isset($_POST["login"]) && isset($_POST["password"])) { //Если логин и пароль были отправлены
+    $GLOBALS['auth']=new  AuthClass();
+    if (!$GLOBALS['auth']->auth($_POST["login"], $_POST["password"])) { //Если логин и пароль введен не правильно
+        echo "<p style=\"color:red;\">Логин или пароль введены не правильно!</p>";
+    }else{
+        $_SESSION['login']=$GLOBALS['auth']->getLogin();
+        //$_SESSION["authObject"]=$GLOBALS['auth']->isAuth();
+        header("Location: /"); //перенаправить на главную страницу
+    }
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,16 +27,16 @@ session_start();
 </head>
 <body>
 
-	<form action="index.phtml" method="post" style="width: 30%;">
+	<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" style="width: 30%;">
         <a href="/" style="margin: 1%"><i class="fas fa-arrow-left"></i></a>
         <div class="input-group" >
-        <span class="input-group-text">Логин: </span>
-        <input type="text" class="form-control" name="login"
+        <span class="input-group-text"> Логин: </span>
+        <input required type="text" class="form-control" name="login"
     	value="<?php echo (isset($_POST["login"])) ? $_POST["login"] : null; // Заполняем поле по умолчанию ?>" />
         </div>
         <div class="input-group" >
         <span class="input-group-text">Пароль: </span>
-        <input type="password" class="form-control" name="password" value="" />
+        <input required  type="password" class="form-control" name="password" value="" />
         </div>
         <div class="btn-group" role="group">
             <button type="submit" class="btn btn-secondary" style="margin: 1%">Войти</button>
